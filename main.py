@@ -144,7 +144,7 @@ def update_data(n_clicks, artist_name):
             return [html.Li("No top tracks found", className='text-light')], create_pie_chart([]), []
 
         pie_chart = create_pie_chart(artist_info['genres'])
-        related_artists_list = [html.Li(artist['name'], className='text-light') for artist in related_artists]
+        related_artists_list = [html.Li(artist['name'], className='text-light') for artist in related_artists[:5]]
 
         return [html.Li(track['name'], className='text-light') for track in top_tracks], pie_chart, related_artists_list
     
